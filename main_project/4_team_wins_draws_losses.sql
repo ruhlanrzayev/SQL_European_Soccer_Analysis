@@ -1,0 +1,7 @@
+-- =====================================================
+-- Question 4: Team Wins, Draws and Losses
+-- =====================================================
+-- Goal: Find each team's total wins, draws and losses
+-- across all seasons combined.
+-- Tables used: match, team
+-- =====================================================
