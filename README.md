@@ -24,7 +24,7 @@ SQL project as I build my path into data analytics.
 4. What is each team's total wins, draws and losses?
 5. Which teams have the best win rate? (min. 100 matches)
 6. How did average goals per match change season by season?
-7. Which team had the longest unbeaten streak?
+7. Top Scoring Teams Per Season
 8. 8Which team won each league in each season?
 9. Which teams rely most on home advantage?
 10. Full all-time league standings table
