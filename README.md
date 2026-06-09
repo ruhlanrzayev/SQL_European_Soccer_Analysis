@@ -309,7 +309,6 @@ SQL_European_Soccer_Analysis/
 
 - [PostgreSQL Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
 - [SQL CTEs Best Practices](https://www.postgresql.org/docs/current/queries-with.html)
-- [Chart.js Documentation](https://www.chartjs.org/)
 - Kaggle European Soccer Dataset Documentation
 
 ---
