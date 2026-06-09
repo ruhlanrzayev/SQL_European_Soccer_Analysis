@@ -14,7 +14,6 @@ Analysis of 25,000+ European football matches across 11 leagues from 2008 to 201
 - **PostgreSQL** — Database management and query execution
 - **VS Code + SQLTools** — Query writing and debugging  
 - **DB Browser for SQLite** — Dataset extraction from original SQLite file
-- **Chart.js** — Dashboard visualization
 
 ---
 
@@ -262,18 +261,6 @@ Five CTEs tracking: all_matches → home_goals → away_goals → home_conceded 
 ✅ **Dashboard Visualization** — HTML/CSS for professional presentation  
 ✅ **Honest Assessment** — Knowing when to ask for help vs. pushing through
 
-### Key Challenges Overcome
-- Match table has 115 columns → Required strategic column selection
-- `cross` is PostgreSQL reserved word → Used quoted identifiers `"cross"`
-- Cartesian product in Q10 → Fixed by adding league_id to all CTEs
-- Window function complexity → Learned RANK() vs ROW_NUMBER() vs DENSE_RANK()
-
-### Next Steps
-- [ ] Create Power BI dashboard for interactive analysis
-- [ ] Build predictive model for match outcomes
-- [ ] Analyze player-level statistics
-- [ ] Compare time periods (2008-2012 vs 2012-2016)
-
 ---
 
 ## 📁 Project Structure
@@ -315,35 +302,6 @@ SQL_European_Soccer_Analysis/
 ├── .gitattributes
 └── README.md
 ```
-
----
-
-## 🚀 How to Use This Project
-
-### 1. Database Setup
-```bash
-# Run in PostgreSQL (in order)
-\i sql_load/1_create_database.sql
-\i sql_load/2_create_tables.sql
-\i sql_load/3_modify_tables.sql
-```
-
-### 2. Run Analyses
-Open any query file from `main_project/` in VS Code + SQLTools:
-```sql
--- Example: Q1 query
-SELECT 
-    t.team_long_name,
-    SUM(CASE WHEN m.home_team_api_id = t.team_api_id THEN m.home_team_goal ELSE 0 END) as home_goals,
-    SUM(CASE WHEN m.away_team_api_id = t.team_api_id THEN m.away_team_goal ELSE 0 END) as away_goals
-FROM public.match m
-JOIN public.team t ON ...
-GROUP BY t.team_long_name
-ORDER BY home_goals + away_goals DESC;
-```
-
-### 3. View Dashboards
-Each question has an interactive HTML dashboard in the outputs folder. Open in any browser to visualize results.
 
 ---
 
